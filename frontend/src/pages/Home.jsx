@@ -19,9 +19,9 @@ export default function Home() {
     const [materials, setMaterials] = useState([]);
 
     useEffect(() => {
-        api.get('/projects?limit=8').then(r => setProjects(r.data.items || []));
-        api.get('/posts?limit=4').then(r => setPosts(r.data.items || []));
-        api.get('/categories?type=material').then(r => setMaterials(r.data.items || []));
+        api.get('/api/projects?limit=8').then(r => setProjects(r.data.items || []));
+        api.get('/api/posts?limit=4').then(r => setPosts(r.data.items || []));
+        api.get('/api/categories?type=material').then(r => setMaterials(r.data.items || []));
     }, []);
 
     return (
