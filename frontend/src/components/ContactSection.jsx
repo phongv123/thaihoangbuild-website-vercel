@@ -51,16 +51,36 @@ export default function ContactSection() {
                         alt="Liên hệ"
                         className="w-full h-64 object-cover"
                     />
+
                     <div className="p-6 flex items-start gap-4">
                         <Headphones className="w-8 h-8 text-blue-600" />
+
                         <div>
                             <h3 className="text-blue-600 font-semibold">
                                 Liên hệ
                             </h3>
-                            <p className="font-bold text-gray-900">
-                                Số điện thoại của Huy:  0969.13.17.18
-                                Số điện thoại của Hiếu: 0909.516.507
-                            </p>
+
+                            <div className="font-bold text-gray-900 space-y-1">
+                                <p>
+                                    Số điện thoại của Huy:
+                                    <a
+                                        href="tel:0969131718"
+                                        className="text-blue-600 ml-2 hover:underline"
+                                    >
+                                        0969.13.17.18
+                                    </a>
+                                </p>
+
+                                <p>
+                                    Số điện thoại của Hiếu:
+                                    <a
+                                        href="tel:0909516507"
+                                        className="text-blue-600 ml-2 hover:underline"
+                                    >
+                                        0909.516.507
+                                    </a>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
