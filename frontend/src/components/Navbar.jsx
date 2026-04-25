@@ -40,7 +40,14 @@ export default function Navbar() {
           to="/"
           className="flex items-center gap-2 font-bold text-xl whitespace-nowrap"
         >
-          <img src={logo} alt="Thai Hoang Build" className="h-8 w-auto" />
+
+          {/* Logo có thể co lại khi scroll để tiết kiệm không gian */}
+          <img
+            src={logo}
+            alt="Thai Hoang Build"
+            className={`w-auto transition-all duration-300 ${scrolled ? "h-8" : "h-10"
+              }`}
+          />
           <span>
             THAIHOANG<span className="bg-gradient-to-r from-[#2f6de1] to-[#1fc7d4] bg-clip-text text-transparent">
               BUILD

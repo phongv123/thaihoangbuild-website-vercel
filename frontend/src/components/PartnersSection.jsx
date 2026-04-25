@@ -5,12 +5,17 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const partners = [
-    { img: "/partners/bachhoaxanh.png", alt: "Bách Hóa Xanh" },
-    { img: "/partners/topzone.png", alt: "TopZone" },
-    { img: "/partners/ankhang.png", alt: "Nhà thuốc An Khang" },
-    { img: "/partners/dienmayxanh.png", alt: "Điện Máy Xanh" },
-    { img: "/partners/tiniworld.png", alt: "TiniWorld" },
-    { img: "/partners/thegioididong.png", alt: "Thế Giới Di Động" },
+    { img: "/partnersection/Chuỗi cửa hàng.jpg", alt: "Chuỗi cửa hàng" },
+    { img: "/partnersection/Khách sạn MK TWO.jpg", alt: "Khách sạn MK TWO" },
+    { img: "/partnersection/Nhà phố Bình Lọi.jpg", alt: "Nhà phố Bình Lọi" },
+    { img: "/partnersection/Nhà Phố Cát Lái.jpg", alt: "Nhà Phố Cát Lái" },
+    { img: "/partnersection/Nhà thép tiền chế - Hốc Môn.jpg", alt: "Nhà thép tiền chế - Hốc Môn" },
+    { img: "/partnersection/Thi công hồ bơi.jpg", alt: "Thi công hồ bơi" },
+    { img: "/partnersection/Thi công khách sạn.jpg", alt: "Thi công khách sạn" },
+    { img: "/partnersection/Thi công nhà Phố Chú Diệu.jpg", alt: "Thi công nhà Phố Chú Diệu" },
+    { img: "/partnersection/Thi công nhà Phố Nguyễn Duy Trinh.jpg", alt: "Thi công nhà Phố Nguyễn Duy Trinh" },
+
+
 ];
 
 export default function PartnersSection() {

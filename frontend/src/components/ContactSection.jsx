@@ -38,7 +38,7 @@ export default function ContactSection() {
                                 Tư vấn - Báo giá
                             </h3>
                             <p className="font-bold text-gray-900">
-                                thaihoangbuild@gmail.com
+                                Zalo ThaiHoangBuild: https://zalo.me/2110708976353979339
                             </p>
                         </div>
                     </div>
@@ -58,7 +58,8 @@ export default function ContactSection() {
                                 Liên hệ
                             </h3>
                             <p className="font-bold text-gray-900">
-                                (+84) 919 650 686
+                                Số điện thoại của Huy:  0969.13.17.18
+                                Số điện thoại của Hiếu: 0909.516.507
                             </p>
                         </div>
                     </div>
@@ -75,7 +76,7 @@ export default function ContactSection() {
                         <MapPin className="w-8 h-8 text-blue-600" />
                         <div>
                             <p className="font-bold text-gray-900">
-                                46 Đường B6, P.Bình Tiên Q.6, TP.HCM
+                                206/7 Đ. Bình Tiên, Bình Tiên, Hồ Chí Minh 73120, Việt Nam
                             </p>
                         </div>
                     </div>
@@ -193,10 +194,10 @@ export default function ContactSection() {
             <div className="w-full h-[400px] mt-8">
                 <iframe
                     title="Bản đồ công ty"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.120177347962!2d106.65259707451817!3d10.801732989347203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ecc5e697a6b%3A0x2b10e6f4d4929a94!2zNDYgxJAuIE5ndXnhu4VuIEhvYW5nLCBQaMaw4budbmcgMTIsIFTDom4gQsOsbmgsIFRow6BuaCBwaOG7kSBI4buNYyBNaW5o!5e0!3m2!1svi!2s!4v1730611999000!5m2!1svi!2s"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4486.418694775508!2d106.64045471112429!3d10.744165759742684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3c3fa80891%3A0xb1c6ca8d3d648784!2zQ8OUTkcgVFkgVE5ISCBUSMOBSSBIT8OATkcgQlVJTEQ!5e1!3m2!1svi!2s!4v1777087294000!5m2!1svi!2s"
                     width="100%"
                     height="100%"
-                    allowFullScreen=""
+                    allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     className="border-0 w-full h-full"

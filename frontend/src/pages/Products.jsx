@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "../components/Hero";
 import ServicesSection from "../components/ServicesSection";
+import ExtraInfoProductsPages from "../components/ExtraInfoProductsPages";
 import BeforeAfterCustom from "../components/BeforeAfterCustom";
 
 
@@ -21,7 +22,8 @@ export default function Products() {
             <Hero slides={slides} />
 
             {/* Phần so sánh ảnh trước – sau */}
-            <ServicesSection /> {/* dịch vụ nổi bật */}
+            {/* <ServicesSection /> câu hỏi thường gặp(đã đem qua blogcomponent) */}
+            <ExtraInfoProductsPages />{/* Các dịch vụ cốt lõi của ThaiHoangBuild */}
             <BeforeAfterCustom /> {/* ảnh trước – sau */}
         </div>
     );

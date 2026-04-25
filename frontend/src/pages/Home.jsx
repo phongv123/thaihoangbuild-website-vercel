@@ -40,10 +40,45 @@ export default function Home() {
 
             <section className="container my-16 grid md:grid-cols-2 gap-8">
                 <ContactForm />
+
                 <div className="card p-6">
                     <h3 className="text-lg font-semibold mb-2">LIÊN HỆ NHANH</h3>
-                    <p>Gọi Hotline: <a href="tel:0903208113" className="underline">0969.13.17.18 & 0902.491.219 (Mr.Huy)</a></p>
-                    <p className="mt-2 text-sm text-gray-600">Thêm ghi chú, yêu cầu hoặc đặt lịch tư vấn miễn phí.</p>
+
+                    {/* Thông tin liên hệ nhanh */}
+                    <p>
+                        Gọi Hotline:{" "}
+                        <a href="tel:0903208113" className="underline">
+                            0969.13.17.18 & 0902.491.219 (Mr.Huy)
+                        </a>
+                    </p>
+
+                    <p className="mt-2">
+                        Thông tin liên hệ của Huy:{" "}
+                        <a href="#" className="underline">
+                            0969131718
+                        </a>
+                    </p>
+
+                    <p className="mt-2">
+                        Thông tin liên hệ của Hiếu:{" "}
+                        <a href="#" className="underline">
+                            (chưa có)
+                        </a>
+                    </p>
+
+                    <p className="mt-2">
+                        Link Zalo công ty:{" "}
+                        <a href="#" className="underline">
+                            https://zalo.me/2110708976353979339
+                        </a>
+                    </p>
+
+                    <p className="mt-2">
+                        Link Facebook công ty:{" "}
+                        <a href="#" className="underline">
+                            https://www.facebook.com/profile.php?id=61572654938124
+                        </a>
+                    </p>
                 </div>
             </section>
         </>

@@ -38,32 +38,38 @@ export default function DifferenceSection() {
                     <div className="grid grid-cols-2 gap-4">
                         <div className="bg-cyan-500 hover:bg-cyan-400 transition rounded p-4 flex flex-col items-center text-center">
                             <FaUsers className="text-white text-2xl mb-2" />
-                            <p>100+ Nhân viên</p>
+                            <p className="font-semibold text-white">Nhân Viên</p>
+                            <span className="text-sm text-white opacity-90">Phòng ban:kiểm soát, kế toán, kỹ sư, đội ngũ thi công</span>
                         </div>
 
                         <div className="bg-cyan-500 hover:bg-cyan-400 transition rounded p-4 flex flex-col items-center text-center">
                             <FaBuilding className="text-white text-2xl mb-2" />
-                            <p>25+ Năm thành lập</p>
+                            <p className="font-semibold text-white">10 Năm Kinh Nghiệm</p>
+                            <span className="text-sm text-white opacity-90">Sữa chữa cải tạo, xây mới, thay đổi mô hình kinh doanh</span>
                         </div>
 
                         <div className="bg-cyan-500 hover:bg-cyan-400 transition rounded p-4 flex flex-col items-center text-center">
                             <FaClock className="text-white text-2xl mb-2" />
-                            <p>Hỗ trợ 24/7</p>
+                            <p className="font-semibold text-white">Hỗ trợ 24/7</p>
+                            <span className="text-sm text-white opacity-90">Phản hồi trong 2 giờ</span>
                         </div>
 
                         <div className="bg-cyan-500 hover:bg-cyan-400 transition rounded p-4 flex flex-col items-center text-center">
                             <FaCogs className="text-white text-2xl mb-2" />
-                            <p>Chuyên nghiệp</p>
+                            <p className="font-semibold text-white">Chuyên nghiệp</p>
+                            <span className="text-sm text-white opacity-90">Tối ưu công năng</span>
                         </div>
 
                         <div className="bg-cyan-500 hover:bg-cyan-400 transition rounded p-4 flex flex-col items-center text-center">
                             <FaHardHat className="text-white text-2xl mb-2" />
-                            <p>Thi công toàn quốc</p>
+                            <p className="font-semibold text-white">Thi công</p>
+                            <span className="text-sm text-white opacity-90">TPHCM & lân cận</span>
                         </div>
 
                         <div className="bg-cyan-500 hover:bg-cyan-400 transition rounded p-4 flex flex-col items-center text-center">
                             <FaTasks className="text-white text-2xl mb-2" />
-                            <p>2000+ Hạng mục</p>
+                            <p className="font-semibold text-white">2000+ Hạng mục</p>
+                            <span className="text-sm text-white opacity-90">Bàn giao trọn gói</span>
                         </div>
                     </div>
                 </div>

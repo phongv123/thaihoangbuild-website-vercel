@@ -18,7 +18,7 @@ export default function ZaloFloatingButton() {
 
             {/* Nút Zalo */}
             <a
-                href="https://zalo.me/0965487497" // thay bằng link Zalo OA hoặc số điện thoại công ty
+                href="https://zalo.me/2110708976353979339" // thay bằng link Zalo OA hoặc số điện thoại công ty
                 target="_blank"
                 rel="noopener noreferrer"
                 className="relative"

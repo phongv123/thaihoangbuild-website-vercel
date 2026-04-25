@@ -15,9 +15,25 @@ export default function AboutSection() {
                 <p className="mb-4 text-gray-700">
                     Công ty TNHH THÁI HOÀNG BUILD với Trụ sở chính tại 206/7 Bình Tiên, Phường Bình Tiên, TPHCM
                 </p>
-                <p className="mb-4 text-gray-700">
-                    Xây dựng trọn gói sửa chữa cải tạo nhà tiền chế & khung thép, thi công nội thất
-                </p>
+                <div className="mb-6">
+                    <h2 className="font-bold text-gray-800 mb-4">
+                        CÁC DỊCH VỤ CỐT LÕI CỦA THAIHOANGBUILD:
+                    </h2>
+
+                    <ul className="space-y-2 text-gray-700 list-disc pl-5">
+                        <li>
+                            <b>Xây mới trọn gói:</b> Đặc biệt tối ưu công năng cho mô hình nhà phố, gác lửng hiện đại.
+                        </li>
+
+                        <li>
+                            <b>Cải tạo & Sửa chữa:</b> Nâng cấp, hô biến nhà cũ thành không gian sống hiện đại.
+                        </li>
+
+                        <li>
+                            <b>Thi công hoàn thiện nội thất:</b> Tỉ mỉ trong từng chi tiết, đề cao tính công năng.
+                        </li>
+                    </ul>
+                </div>
                 <ul className="list-disc list-inside text-gray-600 space-y-2">
                     <li>Đội ngũ kiến trúc sư, kỹ sư giàu kinh nghiệm</li>
                     <li>Đội thợ thi công lành nghề, tuân thủ kỷ luật, an toàn lao động</li>
