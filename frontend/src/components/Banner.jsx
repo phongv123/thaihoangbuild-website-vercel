@@ -9,13 +9,13 @@ const Banner = ({ title, desc, btn1, btn2 }) => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                key={title} // để mỗi slide đổi thì animation chạy lại
+                key={title}
             >
                 {title}
             </motion.h1>
 
             <motion.p
-                className="text-lg md:text-xl mb-6 drop-shadow"
+                className="text-lg md:text-xl mb-6 drop-shadow max-w-2xl"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, delay: 0.2 }}
@@ -25,22 +25,28 @@ const Banner = ({ title, desc, btn1, btn2 }) => {
             </motion.p>
 
             <motion.div
-                className="flex gap-4 mt-10 md:mt-16"
+                className="flex gap-4 mt-6"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.4 }}
                 key={btn1 + btn2}
             >
-                {/* {btn1 && (
-                    <button className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition">
+                {btn1 && (
+                    <a
+                        href="/lien-he"
+                        className="bg-indigo-600 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-indigo-700 transition"
+                    >
                         {btn1}
-                    </button>
+                    </a>
                 )}
                 {btn2 && (
-                    <button className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition">
+                    <a
+                        href="/du-an"
+                        className="bg-white text-gray-900 font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-gray-100 transition"
+                    >
                         {btn2}
-                    </button>
-                )} */}
+                    </a>
+                )}
             </motion.div>
         </div>
     );

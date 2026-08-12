@@ -7,46 +7,19 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import Banner from "./Banner";
+import { useSiteConfig } from "../hooks/useSiteConfig"; // 1. Import hook vào
 
 export default function Hero({ slides }) {
-  // Nếu không truyền slides thì có thể rơi về mảng mặc định (tránh lỗi)
+  // 2. Gọi hook để lấy dữ liệu mới nhất từ CMS
+  const { config } = useSiteConfig();
+
   const defaultSlides = [
-    {
-      image: "/banner_home/1.jpg",
-      title: "",
-      desc: "",
-
-    },
-    {
-      image: "/banner_home/2.jpg",
-      title: "",
-      desc: "",
-
-    },
-    {
-      image: "/banner_home/3.jpg",
-      title: "",
-      desc: "",
-
-    },
-    {
-      image: "/banner_home/4.jpg",
-      title: "",
-      desc: "",
-
-    },
-    {
-      image: "/banner_home/5.jpg",
-      title: "",
-      desc: "",
-
-    },
-    {
-      image: "/banner_home/6.jpg",
-      title: "",
-      desc: "",
-
-    },
+    { image: "/banner_home/1.jpg" },
+    { image: "/banner_home/2.jpg" },
+    { image: "/banner_home/3.jpg" },
+    { image: "/banner_home/4.jpg" },
+    { image: "/banner_home/5.jpg" },
+    { image: "/banner_home/6.jpg" },
   ];
 
   const data = slides && slides.length ? slides : defaultSlides;
@@ -68,7 +41,12 @@ export default function Hero({ slides }) {
               className="h-[95vh] bg-cover bg-center flex items-center justify-center"
               style={{ backgroundImage: `url(${slide.image})` }}
             >
-              <Banner title={slide.title} desc={slide.desc} />
+              {/* 3. Truyền dữ liệu thật từ CMS qua Banner */}
+              <Banner
+                title={config?.heroTitle}
+                desc={config?.heroSubtitle}
+                btn1={config?.heroButtonText}
+              />
             </div>
           </SwiperSlide>
         ))}
