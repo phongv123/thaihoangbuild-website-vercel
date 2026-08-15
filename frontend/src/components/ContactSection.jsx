@@ -1,6 +1,6 @@
 import React from "react";
 import { Mail, Headphones, MapPin } from "lucide-react";
-import { api } from "../api";
+import api from "../api";
 
 export default function ContactSection() {
     return (

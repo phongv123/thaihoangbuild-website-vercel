@@ -1,6 +1,6 @@
 // fe/frontend/src/hooks/useSiteConfig.js
 import { useState, useEffect } from 'react';
-import { api } from '../api';
+import api from '../api';
 
 export function useSiteConfig() {
     const [config, setConfig] = useState(null);

@@ -11,7 +11,7 @@ import GridCards from '../components/GridCards';
 import ContactForm from '../components/ContactForm';
 import Process from '../components/Process';
 import AboutSection from '../components/AboutSection';
-import { api } from '../api';
+import api from '../api';
 
 export default function Home() {
     const [projects, setProjects] = useState([]);
