@@ -7,7 +7,7 @@ export function useSiteConfig() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        api.get('/siteConfig')
+        api.get('/api/siteConfig')
             .then((res) => {
                 setConfig(res.data);
                 setLoading(false);
