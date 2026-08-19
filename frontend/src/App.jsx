@@ -19,22 +19,22 @@ import ProductsAdmin from './pages/Admin/Products';
 import CategoriesAdmin from './pages/Admin/Categories';
 import Projects from './pages/Projects';
 import ZaloFloatingButton from "./components/ZaloFloatingButton";
+import SiteConfigAdmin from "./pages/Admin/SiteConfig";
 
 
-import axios from "axios";
 
 export default function App() {
   const location = useLocation();
   const isAdminPage = location.pathname.startsWith("/admin");
 
   return (
-    <div className="min-h-[100dvh] flex flex-col">
+    <div className="min-h-[100dvh] w-full flex flex-col">
       <ScrollToTop />
 
       {/* Chỉ render Navbar/Footer nếu KHÔNG phải trang admin */}
       {!isAdminPage && <Navbar />}
 
-      <main className="flex-1">
+      <main className="flex-1 w-full min-w-0">
         <Routes>
           {/* User routes */}
           <Route path="/" element={<Home />} />
@@ -60,6 +60,10 @@ export default function App() {
           <Route path="/admin/categories" element={<CategoriesAdmin />} />
           <Route path="/admin/products" element={<ProductsAdmin />} />
           <Route path="/admin/projects" element={<ProjectsAdmin />} />
+          <Route
+            path="/admin/site-config"
+            element={<SiteConfigAdmin />}
+          />
         </Routes>
 
         {/* Ẩn nút Zalo trong admin */}
@@ -71,26 +75,4 @@ export default function App() {
   );
 }
 
-export const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE || "http://localhost:5000",
-});
 
-// request: đính kèm token nếu có
-api.interceptors.request.use((config) => {
-  const t = localStorage.getItem("admin_token");
-  if (t) config.headers = { ...(config.headers || {}), Authorization: "Bearer " + t };
-  return config;
-});
-
-// response: nếu 401 => xoá token và chuyển về login
-api.interceptors.response.use(
-  (res) => res,
-  (error) => {
-    if (error?.response?.status === 401) {
-      localStorage.removeItem("admin_token");
-      // dùng location thay vì router nếu interceptor ở module ngoài React
-      window.location.href = "/admin/login";
-    }
-    return Promise.reject(error);
-  }
-);
