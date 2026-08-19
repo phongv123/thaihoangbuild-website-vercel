@@ -34,6 +34,9 @@ const emptyForm = {
 
     yearsExperience: 0,
     completedProjectsCount: 0,
+
+    processTitle: "",
+    processSteps: [],
 };
 
 export default function SiteConfigAdmin() {
@@ -377,8 +380,98 @@ export default function SiteConfigAdmin() {
 
                 </section>
 
-                {/* SAVE */}
+                {/* =========================
+                    PROCESS
+                ========================== */}
+                <section className="bg-white rounded-xl shadow p-6">
+                    <h3 className="text-lg font-semibold mb-5">
+                        Quy trình thực hiện
+                    </h3>
 
+                    <div className="space-y-4">
+                        <Field
+                            label="Tiêu đề quy trình"
+                            name="processTitle"
+                            value={form.processTitle}
+                            onChange={handleChange}
+                        />
+
+                        <div>
+                            <label className="block text-sm font-medium mb-2">
+                                Các bước thực hiện
+                            </label>
+
+                            <div className="space-y-3">
+                                {(form.processSteps || []).map((step, index) => (
+                                    <div
+                                        key={index}
+                                        className="flex gap-2 items-center"
+                                    >
+                                        <span className="w-8 text-center font-semibold text-gray-500">
+                                            {index + 1}
+                                        </span>
+
+                                        <input
+                                            type="text"
+                                            value={step}
+                                            onChange={(e) => {
+                                                const newSteps = [
+                                                    ...(form.processSteps || []),
+                                                ];
+
+                                                newSteps[index] = e.target.value;
+
+                                                setForm((prev) => ({
+                                                    ...prev,
+                                                    processSteps: newSteps,
+                                                }));
+                                            }}
+                                            className="flex-1 border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                            placeholder={`Bước ${index + 1}`}
+                                        />
+
+                                        <button
+                                            type="button"
+                                            onClick={() => {
+                                                const newSteps = [
+                                                    ...(form.processSteps || []),
+                                                ];
+
+                                                newSteps.splice(index, 1);
+
+                                                setForm((prev) => ({
+                                                    ...prev,
+                                                    processSteps: newSteps,
+                                                }));
+                                            }}
+                                            className="px-3 py-2 rounded-lg bg-red-100 text-red-600 hover:bg-red-200"
+                                        >
+                                            Xóa
+                                        </button>
+                                    </div>
+                                ))}
+                            </div>
+
+                            <button
+                                type="button"
+                                onClick={() => {
+                                    setForm((prev) => ({
+                                        ...prev,
+                                        processSteps: [
+                                            ...(prev.processSteps || []),
+                                            "",
+                                        ],
+                                    }));
+                                }}
+                                className="mt-4 px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-700"
+                            >
+                                + Thêm bước
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                {/* SAVE */}
                 <div className="flex justify-end pb-10">
 
                     <button
