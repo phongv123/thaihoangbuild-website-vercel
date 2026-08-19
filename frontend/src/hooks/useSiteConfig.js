@@ -1,22 +1,34 @@
-// fe/frontend/src/hooks/useSiteConfig.js
-import { useState, useEffect } from 'react';
-import api from '../api';
+import { useEffect, useState } from "react";
+import api from "../api";
 
 export function useSiteConfig() {
     const [config, setConfig] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    const loadConfig = async () => {
+        try {
+            setLoading(true);
+
+            const response = await api.get("/site-config");
+
+            setConfig(response.data);
+        } catch (error) {
+            console.error("Lỗi tải Site Config:", error);
+            setError(error);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     useEffect(() => {
-        api.get('/api/siteConfig')
-            .then((res) => {
-                setConfig(res.data);
-                setLoading(false);
-            })
-            .catch((err) => {
-                console.error('Lỗi tải site config:', err);
-                setLoading(false);
-            });
+        loadConfig();
     }, []);
 
-    return { config, loading };
+    return {
+        config,
+        loading,
+        error,
+        reload: loadConfig,
+    };
 }
