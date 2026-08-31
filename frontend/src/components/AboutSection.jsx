@@ -31,7 +31,7 @@ export default function AboutSection() {
                             "CÁC DỊCH VỤ CỐT LÕI CỦA THAIHOANGBUILD:"}
                     </h2>
 
-                    {services.length > 0 ? (
+                    {services.length > 0 && (
                         <ul className="space-y-2 text-gray-700 list-disc pl-5">
                             {services.map((service, index) => (
                                 <li key={service._id || index}>
@@ -39,23 +39,6 @@ export default function AboutSection() {
                                     {service.description}
                                 </li>
                             ))}
-                        </ul>
-                    ) : (
-                        <ul className="space-y-2 text-gray-700 list-disc pl-5">
-                            <li>
-                                <b>Xây mới trọn gói:</b> Đặc biệt tối ưu công năng cho mô hình
-                                nhà phố, gác lửng hiện đại.
-                            </li>
-
-                            <li>
-                                <b>Cải tạo & Sửa chữa:</b> Nâng cấp, hô biến nhà cũ thành
-                                không gian sống hiện đại.
-                            </li>
-
-                            <li>
-                                <b>Thi công hoàn thiện nội thất:</b> Tỉ mỉ trong từng chi tiết,
-                                đề cao tính công năng.
-                            </li>
                         </ul>
                     )}
                 </div>

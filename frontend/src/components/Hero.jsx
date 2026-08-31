@@ -22,7 +22,7 @@ export default function Hero() {
   const {
     items: banners,
     loading,
-  } = useCmsList('/banners')
+  } = useCmsList("/banners?page=home")
 
   if (loading) {
     return (
@@ -82,14 +82,14 @@ export default function Hero() {
             <div
               className="h-[95vh] bg-cover bg-center flex items-center justify-center"
               style={{
-                backgroundImage: `url(${slide.coverImage})`,
+                backgroundImage: `url(${slide.cover})`,
               }}
             >
               <Banner
                 title={slide.title}
                 desc={slide.subtitle}
                 btn1={slide.buttonText}
-                btnUrl={slide.buttonUrl}
+                btn1Url={slide.link}
               />
             </div>
           </SwiperSlide>
