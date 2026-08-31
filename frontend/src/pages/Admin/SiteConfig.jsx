@@ -3,6 +3,9 @@ import api from "../../api";
 import AdminLayout from "../../components/admin/AdminLayout";
 
 const emptyForm = {
+    // =========================
+    // THÔNG TIN CÔNG TY
+    // =========================
     companyName: "",
     slogan: "",
     logoUrl: "",
@@ -21,11 +24,17 @@ const emptyForm = {
     mapUrl: "",
     copyright: "",
 
+    // =========================
+    // HERO - TRANG CHỦ
+    // =========================
     heroTitle: "",
     heroSubtitle: "",
     heroButtonText: "",
     heroButtonUrl: "",
 
+    // =========================
+    // ABOUT - TRANG CHỦ
+    // =========================
     aboutTitle: "",
     aboutSubtitle: "",
     aboutDescription: "",
@@ -34,9 +43,6 @@ const emptyForm = {
 
     yearsExperience: 0,
     completedProjectsCount: 0,
-
-    processTitle: "",
-    processSteps: [],
 };
 
 export default function SiteConfigAdmin() {
@@ -115,20 +121,22 @@ export default function SiteConfigAdmin() {
         <AdminLayout>
             <div className="max-w-6xl mx-auto space-y-6">
 
+                {/* =========================
+                    HEADER
+                ========================== */}
                 <div>
                     <h2 className="text-2xl font-bold">
-                        Thông tin Website
+                        Trang chủ
                     </h2>
 
                     <p className="text-gray-500 mt-1">
-                        Quản lý thông tin chung hiển thị trên website.
+                        Quản lý nội dung hiển thị trên trang chủ website.
                     </p>
                 </div>
 
                 {/* =========================
-            THÔNG TIN CÔNG TY
-        ========================== */}
-
+                    THÔNG TIN CÔNG TY
+                ========================== */}
                 <section className="bg-white rounded-xl shadow p-6">
 
                     <h3 className="text-lg font-semibold mb-5">
@@ -258,13 +266,12 @@ export default function SiteConfigAdmin() {
                 </section>
 
                 {/* =========================
-            HERO
-        ========================== */}
-
+                    HERO
+                ========================== */}
                 <section className="bg-white rounded-xl shadow p-6">
 
                     <h3 className="text-lg font-semibold mb-5">
-                        Hero
+                        Hero trang chủ
                     </h3>
 
                     <div className="space-y-4">
@@ -306,13 +313,12 @@ export default function SiteConfigAdmin() {
                 </section>
 
                 {/* =========================
-            ABOUT
-        ========================== */}
-
+                    ABOUT - TRANG CHỦ
+                ========================== */}
                 <section className="bg-white rounded-xl shadow p-6">
 
                     <h3 className="text-lg font-semibold mb-5">
-                        Giới thiệu
+                        Giới thiệu trên trang chủ
                     </h3>
 
                     <div className="space-y-4">
@@ -381,97 +387,8 @@ export default function SiteConfigAdmin() {
                 </section>
 
                 {/* =========================
-                    PROCESS
+                    SAVE
                 ========================== */}
-                <section className="bg-white rounded-xl shadow p-6">
-                    <h3 className="text-lg font-semibold mb-5">
-                        Quy trình thực hiện
-                    </h3>
-
-                    <div className="space-y-4">
-                        <Field
-                            label="Tiêu đề quy trình"
-                            name="processTitle"
-                            value={form.processTitle}
-                            onChange={handleChange}
-                        />
-
-                        <div>
-                            <label className="block text-sm font-medium mb-2">
-                                Các bước thực hiện
-                            </label>
-
-                            <div className="space-y-3">
-                                {(form.processSteps || []).map((step, index) => (
-                                    <div
-                                        key={index}
-                                        className="flex gap-2 items-center"
-                                    >
-                                        <span className="w-8 text-center font-semibold text-gray-500">
-                                            {index + 1}
-                                        </span>
-
-                                        <input
-                                            type="text"
-                                            value={step}
-                                            onChange={(e) => {
-                                                const newSteps = [
-                                                    ...(form.processSteps || []),
-                                                ];
-
-                                                newSteps[index] = e.target.value;
-
-                                                setForm((prev) => ({
-                                                    ...prev,
-                                                    processSteps: newSteps,
-                                                }));
-                                            }}
-                                            className="flex-1 border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                            placeholder={`Bước ${index + 1}`}
-                                        />
-
-                                        <button
-                                            type="button"
-                                            onClick={() => {
-                                                const newSteps = [
-                                                    ...(form.processSteps || []),
-                                                ];
-
-                                                newSteps.splice(index, 1);
-
-                                                setForm((prev) => ({
-                                                    ...prev,
-                                                    processSteps: newSteps,
-                                                }));
-                                            }}
-                                            className="px-3 py-2 rounded-lg bg-red-100 text-red-600 hover:bg-red-200"
-                                        >
-                                            Xóa
-                                        </button>
-                                    </div>
-                                ))}
-                            </div>
-
-                            <button
-                                type="button"
-                                onClick={() => {
-                                    setForm((prev) => ({
-                                        ...prev,
-                                        processSteps: [
-                                            ...(prev.processSteps || []),
-                                            "",
-                                        ],
-                                    }));
-                                }}
-                                className="mt-4 px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-700"
-                            >
-                                + Thêm bước
-                            </button>
-                        </div>
-                    </div>
-                </section>
-
-                {/* SAVE */}
                 <div className="flex justify-end pb-10">
 
                     <button
@@ -479,15 +396,15 @@ export default function SiteConfigAdmin() {
                         onClick={save}
                         disabled={saving}
                         className="
-              bg-blue-600
-              hover:bg-blue-700
-              disabled:opacity-50
-              text-white
-              px-6
-              py-3
-              rounded-lg
-              font-medium
-            "
+                            bg-blue-600
+                            hover:bg-blue-700
+                            disabled:opacity-50
+                            text-white
+                            px-6
+                            py-3
+                            rounded-lg
+                            font-medium
+                        "
                     >
                         {saving
                             ? "Đang lưu..."
@@ -519,7 +436,15 @@ function Field({
                 name={name}
                 value={value ?? ""}
                 onChange={onChange}
-                className="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="
+                    w-full
+                    border
+                    rounded-lg
+                    p-3
+                    focus:outline-none
+                    focus:ring-2
+                    focus:ring-blue-500
+                "
             />
         </div>
     );
@@ -542,7 +467,15 @@ function TextArea({
                 value={value ?? ""}
                 onChange={onChange}
                 rows={4}
-                className="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="
+                    w-full
+                    border
+                    rounded-lg
+                    p-3
+                    focus:outline-none
+                    focus:ring-2
+                    focus:ring-blue-500
+                "
             />
         </div>
     );

@@ -24,7 +24,7 @@ export default function Home() {
                     projectsResponse,
                     postsResponse,
                 ] = await Promise.all([
-                    api.get('/projects?limit=8'),
+                    api.get('/projects?limit=8&excludeFeatured=true'),
                     api.get('/posts?limit=4'),
                 ])
 

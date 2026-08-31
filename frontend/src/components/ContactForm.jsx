@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import api from "../api";
+import { useSiteConfig } from "../hooks/useSiteConfig";
 
 export default function ContactForm() {
+  const { config } = useSiteConfig();
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -29,7 +32,10 @@ export default function ContactForm() {
     try {
       await api.post("/leads", form);
 
-      setStatus("✅ Gửi thành công! Chúng tôi sẽ liên hệ sớm.");
+      setStatus(
+        "✅ Gửi thành công! Chúng tôi sẽ liên hệ sớm."
+      );
+
       setForm({
         name: "",
         email: "",
@@ -38,71 +44,161 @@ export default function ContactForm() {
         message: "",
       });
     } catch (error) {
-      setStatus("❌ Gửi thất bại. Vui lòng thử lại.");
+      console.error(error);
+
+      setStatus(
+        "❌ Gửi thất bại. Vui lòng thử lại."
+      );
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <form onSubmit={onSubmit} className="card p-6 space-y-4 bg-white rounded-xl shadow">
+    <form
+      onSubmit={onSubmit}
+      className="
+        card
+        p-6
+        space-y-4
+        bg-white
+        rounded-xl
+        shadow
+      "
+    >
 
-      <h3 className="text-lg font-semibold">Đăng ký báo giá</h3>
+      <h3 className="text-lg font-semibold">
+        {config?.homeQuoteTitle ||
+          "Đăng ký báo giá"}
+      </h3>
 
       {status && (
-        <div className="text-sm bg-gray-100 p-2 rounded">{status}</div>
+        <div className="text-sm bg-gray-100 p-2 rounded">
+          {status}
+        </div>
       )}
 
       <input
         className="w-full border rounded-lg p-2"
-        placeholder="Tên của bạn"
+        placeholder={
+          config?.homeQuoteNamePlaceholder ||
+          "Tên của bạn"
+        }
         value={form.name}
-        onChange={(e) => handleChange("name", e.target.value)}
+        onChange={(e) =>
+          handleChange(
+            "name",
+            e.target.value
+          )
+        }
       />
 
       <input
         className="w-full border rounded-lg p-2"
-        placeholder="Địa chỉ"
+        placeholder={
+          config?.homeQuoteAddressPlaceholder ||
+          "Địa chỉ"
+        }
         value={form.address}
-        onChange={(e) => handleChange("address", e.target.value)}
+        onChange={(e) =>
+          handleChange(
+            "address",
+            e.target.value
+          )
+        }
       />
 
       <input
         className="w-full border rounded-lg p-2"
-        placeholder="Email"
+        placeholder={
+          config?.homeQuoteEmailPlaceholder ||
+          "Email"
+        }
         value={form.email}
-        onChange={(e) => handleChange("email", e.target.value)}
+        onChange={(e) =>
+          handleChange(
+            "email",
+            e.target.value
+          )
+        }
       />
 
       <input
         className="w-full border rounded-lg p-2"
-        placeholder="Điện thoại"
+        placeholder={
+          config?.homeQuotePhonePlaceholder ||
+          "Điện thoại"
+        }
         value={form.phone}
-        onChange={(e) => handleChange("phone", e.target.value)}
+        onChange={(e) =>
+          handleChange(
+            "phone",
+            e.target.value
+          )
+        }
       />
 
       <textarea
         className="w-full border rounded-lg p-2"
         rows="4"
-        placeholder="Yêu cầu"
+        placeholder={
+          config?.homeQuoteMessagePlaceholder ||
+          "Yêu cầu"
+        }
         value={form.message}
-        onChange={(e) => handleChange("message", e.target.value)}
+        onChange={(e) =>
+          handleChange(
+            "message",
+            e.target.value
+          )
+        }
       />
 
       <button
+        type="submit"
         disabled={loading}
-        className="w-full bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-400
-             hover:from-blue-700 hover:via-blue-600 hover:to-cyan-500
-             text-white py-3 rounded-lg flex items-center justify-center gap-2
-             transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5
-             disabled:opacity-60"
+        className="
+          w-full
+          bg-gradient-to-r
+          from-blue-600
+          via-blue-500
+          to-cyan-400
+          hover:from-blue-700
+          hover:via-blue-600
+          hover:to-cyan-500
+          text-white
+          py-3
+          rounded-lg
+          flex
+          items-center
+          justify-center
+          gap-2
+          transition-all
+          duration-300
+          shadow-md
+          hover:shadow-lg
+          hover:-translate-y-0.5
+          disabled:opacity-60
+        "
       >
         {loading ? (
           <>
-            <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+            <span
+              className="
+                w-4
+                h-4
+                border-2
+                border-white
+                border-t-transparent
+                rounded-full
+                animate-spin
+              "
+            />
+
             Đang gửi...
           </>
         ) : (
+          config?.homeQuoteSubmitText ||
           "Gửi yêu cầu"
         )}
       </button>
